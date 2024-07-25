@@ -221,5 +221,98 @@ text.textContent ="this is from javascript" //change the correspondin html eleme
 let container= document.getElementsByClassName('container');
 console.log("container :" ,container);
 
-let container1= container[0];
-console.log("container1 : ",container1);
+// let container1= container[0];
+// console.log("container1 : ",container1);
+
+
+
+
+
+//time function
+
+setTimeout(function(){
+    console.log("this is from setTimeout")
+},5000);
+
+// setInterval(function (){
+//     console.log("intervals")
+// },5000);
+
+
+//program to print cuurent time
+
+function putZero(value){
+    return value <10 ? "0"+value:value;
+
+}
+
+function show(){
+    let dt = new Date();
+    console.log("dt :",dt);
+
+    let hours = dt.getHours();
+    console.log("hours :", hours)
+
+    let ampm = hours <12 ? "am" :"pm";
+    console.log("ampm :",ampm);
+
+    let time= document.getElementById('time');
+    console.log("time :",time);
+    
+    time.innerHTML = putZero(hours) + ":" + putZero(dt.getMinutes())+":" +putZero(dt.getSeconds())
+
+    // setTimeout (show,1000);
+}
+show();
+
+console.log("\n\n\n\n\n\n")
+
+//event Handling
+let btn = document.getElementById('btn');
+console.log("btn :",btn);
+
+btn.addEventListener ('click',function(){
+    console.log("Button cliked....");
+});
+
+btn.addEventListener('mouseover',function(){
+    console.log("mouseover event fired");
+})
+
+btn.addEventListener('mouseout',function(){
+    console.log("mouseout event fired");
+})
+
+btn.addEventListener('mousedown',function(){
+    console.log("mousedown event fired");
+})
+btn.addEventListener('mouseup',function(){
+    console.log("mouseup event fired");
+})
+
+btn.addEventListener('mousemove',function(){
+    console.log("mousemove event fired");
+})
+
+let input =document.getElementById('a');
+console.log("input:",input);
+
+input.addEventListener('keydown',function(){
+    console.log("keydown events fired ");
+});
+
+input.addEventListener('keyup',function(){
+    console.log("keyup events fired ");
+});
+
+
+
+
+
+
+
+
+
+
+
+
