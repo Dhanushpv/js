@@ -307,6 +307,19 @@ input.addEventListener('keyup',function(){
 
 
 
+let bttn = document.getElementById('bttn');
+console.log("bttn :",bttn);
+
+function changeColor(color){
+    document.body.style.backgroundColor=color;
+}
+function bttn2 (){
+    changeColor('red');
+    bttn2.innerHTML="background color changed";
+}
+    
+
+
 
 
 
