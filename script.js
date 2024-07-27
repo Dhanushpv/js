@@ -317,10 +317,51 @@ function bttn2 (){
     changeColor('red');
     bttn2.innerHTML="background color changed";
 }
-    
 
 
 
+    //spread operator
+
+    console.log("\n\n\n\n\n\n");
+
+    let arr3=[1,2,3,4,5];
+    console.log("arr3 :",arr3);
+
+    let arr6=[...arr3,6];
+    console.log("arr6 :",arr6);
+
+    let obj1 ={
+        name: "john",
+        email:"john@gmail.com",
+    }
+    console.log("obj1:",obj1)
+
+{
+    let obj2={...obj1, addd:"myaddres"}
+    console.log("obj2:",obj2)
+}
+
+
+//destructing
+
+let [aa,bb,cc,dd,ee]= arr3;
+console.log("a :" ,aa);
+console.log("b :",bb);
+console.log("c :", ee);
+
+let {email,name}=obj1;
+console.log("name :" ,name);
+console.log("email",email);
+
+// nested destructing
+
+let matrix =[
+    [1,2,3],
+    [4,5,6],
+    [7,8,9],
+];
+console.log("matrix :",matrix);
+let [a,b,c]
 
 
 
