@@ -361,7 +361,66 @@ let matrix =[
     [7,8,9],
 ];
 console.log("matrix :",matrix);
-let [a,b,c]
+// let [a,b,c]
+
+let[row1,row2,[g,h,i],] =matrix;
+console.log("row1",row1);
+console.log("row2",row2);
+console.log("row3",g,h,i);
+
+let [a1,b1,c] =row1;
+console.log("a:",1);
+console.log("b1:",b1);
+console.log("c:",c);
+
+
+let data={
+    name1:"dhanu",
+    email1:"danu@email.com",
+    address:{
+        city: "mycity",
+        street:"mystreet",
+        pincode:"12345"
+
+    }
+}
+
+let {name1, email1, address :{city,street,pincode}}= data;
+console.log("name :",name1);
+console.log("email :",email1);
+console.log("address :",city,street,pincode);
+
+console.log("\n\n\n\n\n")
+
+//array methods
+
+let arr11=[10,20,30,40,50];
+let result15=arr11.forEach((item) => {
+    console.log("item :",item);
+    return item >30
+});
+console.log("result15 :",result15);//undefined
+
+let result111=arr11.find((item) =>{
+    return item >30;
+});
+console.log("result1:",result111);
+
+let result222=arr11.filter((item) =>{
+    return item >30;
+});
+console.log("result12:",result222);
+
+let result333=arr11.map((item) =>{
+    return item +2;
+});
+console.log("result13:",result333);
+
+
+let result4=arr11.reduce((item,total) =>{
+    return  total+ item;
+});
+console.log("result13:",result4);
 
 
 
