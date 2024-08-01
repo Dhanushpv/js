@@ -224,10 +224,25 @@ console.log("container :" ,container);
 // let container1= container[0];
 // console.log("container1 : ",container1);
 
+console.log("\n\n\n\n\n\n math function")
 
+//math function 
 
+console.log(Math.sqrt(16));//4
+console.log(Math.round(11.4))//11
+console.log(Math.round(11.5))//12
+console.log(Math.floor(12.4))//12
+console.log(Math.floor(12.9))//12
+console.log(Math.ceil(13.9))//14
+console.log(Math.ceil(13.1))//14
+console.log(Math.abs(10))//10
+console.log(Math.abs(-10))
+console.log(Math.PI)
+console.log(Math.max(10,20,30))
+console.log(Math.min(10,20,30))
+console.log(Math.pow(2,3))
 
-
+console.log("\n\n\n\n\n\n")
 //time function
 
 setTimeout(function(){
@@ -395,14 +410,16 @@ console.log("\n\n\n\n\n")
 //array methods
 
 let arr11=[10,20,30,40,50];
-let result15=arr11.forEach((item) => {
+let result15=arr11.forEach((item) => {     
     console.log("item :",item);
-    return item >30
+    return item 
 });
+
+//for each
 console.log("result15 :",result15);//undefined
 
 let result111=arr11.find((item) =>{
-    return item >30;
+    return item <30;
 });
 console.log("result1:",result111);
 
@@ -421,11 +438,187 @@ let result4=arr11.reduce((item,total) =>{
     return  total+ item;
 });
 console.log("result13:",result4);
+console.log('\n\n\n\n')
+
+const people =[
+    {name2: 'Alice', age: 30 , city: 'New york'},
+    {name2: 'Bob', age: 25 , city: 'Los Angels'},
+    {name2: 'charlie', age: 35 , city: 'chicago'},
+    {name2: 'David', age: 30 , city: 'New york'},
+    {name2: 'Eve', age: 28 , city: 'Los Angels'},
+]
+
+//for each
+//name to uppercase
+people.forEach(n => {
+    console.log("name :",n.name2.toUpperCase());
+});
+console.log('\n\n\n\n')
+
+// city
+people.forEach(n => {
+    console.log("city :",n.city);
+});
+
+console.log('\n\n\n\n')
+//age
+let nre = people.forEach(n => {
+    console.log("age",n.age+5)
+
+});
+console.log("age:",nre);
+
+
+// find
+
+
+// const minAge = Math.min(...people.map(person => person.age));
+
+// const youngest = people.find(person => person.age === minAge);
+// console.log("The youngest person is:", youngest.name2, "with age", youngest.age);
+
+let result1111=arr11.find((item) =>{
+    return item >30;
+});
+console.log("result1:",result1111);
+
+
+
+console.log("\n\n\n\n");
+// console.log("this :", this);
+
+let obj3 ={
+    name3 : "mark",
+    email3 : "mark@gmail.com",
+    age: 30,
+    printAge : function (){
+        console.log(" started.......");
+        console.log("this" ,this);
+        console.log("age" ,this.age);
+        return "Function exicution completed"
+    }
+
+}
+{
+
+
+    console.log("obj :",obj3);
+
+
+    console.log("\n\n\n");
+    console.log("obj :",obj3.name3);
+
+
+    console.log("\n\n\n");
+    console.log("obj :",obj3.email3);
+
+
+    console.log("\n\n\n");
+    console.log("obj :",obj3.printAge());
+
+
+    console.log("\n\n\n\n\n\n");
+
+    function greet( message1,message2){
+        console.log("message1 :", message1);
+        console.log("message2 :", message2);
+
+        console.log("this :", this);
+        console.log("name :", this.name3);
+
+    }
+    // greet("Hello","Hai");
+    // greet.call(obj,"Hello","Hai");
+    let output = greet.bind(obj,"Hello","Hai");
+    console.log("output : ",output);
+    output();
+}
+   
+
+
+//constructor function 
+
+function person(name3,age,mark){
+    this.name3=name3;
+    this.age=age;
+    this.mark=mark;
+    this.greeting =function () {
+        console.log(`Hai ${this.name3} ,your are ${this.age} years old`);
+    }
+}
+let person1 = new person("henrry",55,100);
+console.log("person1 :",person1);
+person1.greeting();
+
+let person2 = new person("babu",35,50);
+console.log("person1 :",person1);
+person2.greeting();
+
+// Update individual object
+
+person1.address = "thissur";
+console.log("person1 :",person1);
+
+person2.address ="kochi";
+console.log("person2 :",person2)
 
 
 
 
+person.prototype.getMark =function (){
+    console.log(`hi ${this.name3} ,your mark is ${this.mark}`);
+}
+person1.getMark();
+person2.getMark();
+
+
+
+// //Using classes
+
+class Person {
+    name5;
+    age;
+    mark;
+    
+
+    constructor(name5,age,mark){
+        this.name5 =name5;
+        this.age=age;
+        this.mark=mark;
+    }
+
+
+    greeting() {
+        console.log(`hello ${this.name5}, your age is ${this.age} and your mark is ${this.mark}`);
+    }
+}
+let Person5 =new Person ("john",12,70);
+console.log("person1",Person5);
+Person5.greeting();
 
 
 
 
+console.log("\n\n\n\n\n\n")
+
+class Animal{
+    name;
+    constructor(name){
+        this.name=name;
+    }
+    walking(){
+        console.log (`${this.name} is walking.`);
+    }
+}
+class Dog extends Animal{
+    color;
+    constructor(name,color){
+        super(name);//super ketword is used to access the parent class (class animal)
+        this.color=color;
+    }
+    walking(){
+        console.log (`my ${this.color} coloured ${this.name} is running`);
+    }
+}
+let dog1 =new Dog ("tommy","brown")
+dog1.walking();
