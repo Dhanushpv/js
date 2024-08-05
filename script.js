@@ -435,7 +435,7 @@ console.log("result13:",result333);
 
 
 let result4=arr11.reduce((item,total) =>{
-    return  total+ item;
+    return  total+ item ;
 });
 console.log("result13:",result4);
 console.log('\n\n\n\n')
@@ -480,11 +480,7 @@ console.log("age:",nre);
 let result1111=arr11.find((item) =>{
     return item >30;
 });
-console.log("result1:",result1111);
-
-
-
-console.log("\n\n\n\n");
+console.log("result1:",result1111);console.log("\n\n\n\n");
 // console.log("this :", this);
 
 let obj3 ={
@@ -499,6 +495,9 @@ let obj3 ={
     }
 
 }
+
+
+
 {
 
 
@@ -622,3 +621,113 @@ class Dog extends Animal{
 }
 let dog1 =new Dog ("tommy","brown")
 dog1.walking();
+
+
+
+console.log("\n\n\n\n\n\n")
+class Button{
+    button;
+
+    constructor(content){
+        this.button =document.createElement('button')    
+        this.button.innerHTML=content; 
+        document.body.appendChild(this.button)  
+    }
+    set width(width){
+
+        this.button.style.width =width + "px"
+    }
+    set height(height){
+
+        this.button.style.height =height + "px"
+    }
+    get width (){
+        return this.button.style.width
+    }
+    get height (){
+        return this.button.style.height
+    }
+    onClick(fn){
+        this.button.onclick=fn;
+    }
+}
+let button1 =new Button ('click to go');
+console.log("button 1:", button1); 
+
+button1.width =200;
+button1.height=200;
+console.log("button width : ",button1.width);
+console.log("button height : ",button1.height);
+
+button1.onClick(function (){
+    console.log("buttton clicked,................")
+})
+class bluebutton extends Button {
+    
+    constructor(content){
+        this.button =document.createElement('button')    
+        this.button.innerHTML=content; 
+        document.body.appendChild(this.button)  
+    }
+}
+
+
+{
+class   Paragraph{
+    paragraph;
+    constructor(contentpera){
+        this.paragraph =document.createElement('p') ;   
+        this.paragraph.innerHTML=contentpera; 
+        document.body.appendChild(this.paragraph);
+    }
+    onClick(fn) {
+        this.paragraph.onclick = fn;
+    }
+
+    onMouseOver(fn) {
+        this.paragraph.onmouseover = fn;
+    }
+    onMouseOut(fn) {
+        this.paragraph.addEventListener('mouseout', fn);
+    }
+    setColor(color) {
+        this.paragraph.style.color = color;
+    }
+    
+    setBgColor(color) {
+        this.paragraph.style.backgroundColor = color;
+    }
+    setFontSize(size) {
+        this.paragraph.style.fontSize = size + "px";
+    }
+    
+}
+
+let paragraph1 = new Paragraph ('JavaScript is a scripting language used to develop web pages. Developed in Netscape, JS allows developers to create a dynamic and interactive web page to interact with visitors and execute complex actions. It also enables users to load content into a document without reloading the entire page.');
+
+
+paragraph1.onClick(function () {
+    console.log("Paragraph clicked...");
+    paragraph1.setColor('blue'); 
+    paragraph1.setBgColor('black'); 
+    paragraph1. setFontSize(50); 
+});
+paragraph1.onMouseOver(function () {
+    console.log("Mouse over the paragraph...");
+    paragraph1.setColor('red'); 
+    paragraph1.setBgColor('black');
+})
+paragraph1.onMouseOut(function () {
+    console.log("Mouse Out the paragraph...");
+    paragraph1.setColor('black'); 
+    paragraph1.setBgColor('white'); 
+    paragraph1. setFontSize(20); 
+
+})
+}
+  
+
+
+
+
+
