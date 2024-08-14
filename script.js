@@ -820,47 +820,119 @@
 // }
 
 
-let xhr = new XMLHttpRequest();
-console.log("xhr:", xhr);
+// let xhr = new XMLHttpRequest();
+// console.log("xhr:", xhr);
 
-// Configure the GET request
-xhr.open('get', 'https://jsonplaceholder.typicode.com/users');
+// // Configure the GET request
+// xhr.open('get', 'https://jsonplaceholder.typicode.com/users');
 
-document.getElementById('bttn1').addEventListener('click', function () {
-    xhr.send();
-});
+// document.getElementById('bttn1').addEventListener('click', function () {
+//     xhr.send();
+// });
 
-xhr.onreadystatechange = function () {
-    console.log("readyState:", xhr.readyState);
+// xhr.onreadystatechange = function () {
+//     console.log("readyState:", xhr.readyState);
 
-    if (xhr.readyState === 4) {
-        console.log("status:", xhr.status);
+//     if (xhr.readyState === 4) {
+//         console.log("status:", xhr.status);
 
-        if (xhr.status === 200) {
-            let response = xhr.response; // Corrected variable name and method
-            console.log("response:", response);
-            console.log("typeof(response):", typeof(response));
+//         if (xhr.status === 200) {
+//             let response = xhr.response; // Corrected variable name and method
+//             console.log("response:", response);
+//             console.log("typeof(response):", typeof(response));
 
-            let datas = JSON.parse(response); // Corrected variable name
-            console.log("datas:", datas);
+//             let datas = JSON.parse(response); // Corrected variable name
+//             console.log("datas:", datas);
 
-            let dataContainer = document.getElementById('datacontainer');
-            console.log("dataContainer:", dataContainer);
+//             let dataContainer = document.getElementById('datacontainer');
+//             console.log("dataContainer:", dataContainer);
 
-            let rows = ''; // Initialize rows variable
-            for (let i = 0; i < datas.length; i++) { // Corrected `length` typo
-                rows = rows + `
-                    <tr>
-                        <td>${datas[i].name}</td>
-                        <td>${datas[i].username}</td>
-                        <td>${datas[i].email}</td>
-                        <td>${datas[i].website}</td>
-                    </tr>
-                `;
-            }
+//             let rows = ''; // Initialize rows variable
+//             for (let i = 0; i < datas.length; i++) { // Corrected `length` typo
+//                 rows = rows + `
+//                     <tr>
+//                         <td>${datas[i].name}</td>
+//                         <td>${datas[i].username}</td>
+//                         <td>${datas[i].email}</td>
+//                         <td>${datas[i].website}</td>
+//                     </tr>
+//                 `;
+//             }
 
-            console.log("rows", rows);
-            dataContainer.innerHTML = rows;
-        }
-    }
-};
+//             console.log("rows", rows);
+//             dataContainer.innerHTML = rows;
+//         }
+//     }
+// };
+
+
+
+
+// validation
+
+
+const str1 = "the cat is white";
+const str2 = "rat eats fish";
+const str3 ="is it ok fishe";
+const str4= `haiii
+hello world
+good to have
+you`;
+ 
+
+const regexp1 =/a/;
+const result1=regexp1.test(str1);//check if str1 contains letter 'a'
+console.log("result 1 :", result1);// true
+
+
+const regexp2=/A/i;
+const result2=regexp2.test(str1);// check if str1
+console.log("result 2 :",result2)//true
+
+const regexp3=/ab/;
+const result3=regexp3.test(str1);// check if str1
+console.log("result 3:",result3)// false
+
+
+const regexp4=/[crb]a/;
+const result4=regexp4.test(str1);// check if str1
+console.log("result 4 :",result4)//true
+
+
+const regexp5=/[a-z]a/i;
+const result5=regexp5.test(str1);// check if str1
+console.log("result 5 :",result5)//true
+
+const regexp6=/[a-z0-9]a/i;
+const result6=regexp6.test(str1);// check if str1
+console.log("result 6:",result6)//true
+
+const regexp7 = /^rat/i;
+const result7=regexp7.test(str2);
+console.log("result 7",result7);
+
+const regexp8 = /fish$/i;
+const result8=regexp8.test(str2);
+console.log("result 8",result8);
+
+const regexp9 = /^good/im;
+const result9=regexp9.test(str2);
+console.log("result 9",result9);
+
+const regexp10 = /haiii$/im;
+const result10=regexp10.test(str4);
+console.log("result 10",result10);
+
+
+const regexp11 = /fishes?/i;
+const result11=regexp11.test(str3);
+console.log("result 11",result11);
+
+
+const regexp12 = /fish(es)?/i;
+const result12=regexp12.test(str3);
+console.log("result 12",result12);
+
+const regexp13 = /fishes*$/i;
+const result13=regexp13.test(str3);
+console.log("result 13",result12);
